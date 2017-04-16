@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+{% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
+
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Blog" %}{% endif %}{% endblock %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static "mezzanine/css/magnific-popup.css" %}">
+{% endblock extra_css %}
+
+{% block main %}
+{{ block.super }}
+
+{% editable page.gallery.content %}
+{{ page.gallery.content|richtext_filters|safe }}
+{% endeditable %}
+
+
+
+
+
+{% block body %}
+
+		<!-- Heading v1 -->
+		<div class="shadow-wrapper">
+					<div class="tag-box tag-box-v1 box-shadow shadow-effect-2">
+
+						<div class="heading heading-v1 margin-bottom-40">
+							<h2>Quotes for you to <span class="color-blue">Reflect on</span></h2>
+							<p class="space-lg-hor"><span class="dropcap">Q</span>uotes are like pills for learners to energize the inner being.
+								Just as technology tools are necessary to get by our daily lives, so are motivational quotes.
+								As a student and a learner, a simple short sentence can go a long way to brighten your day and
+								ignite a spark into your daily activity when digested subconsciously. A quote can bring that ‘Aha moment’
+								when the words speak to your soul. That’s about how powerful short quotes can be; words that live longer
+								that the lips that utter them. Technology tools become obsolete at some point; but these words live for ages.</p>
+						</div>
+					</div>
+		</div>
+
+
+
+		<div class="gallery row">
+		{% with page.gallery.images.all as images %}
+		{% for image in images %}
+		<div class="col-xs-4 col-sm-3">
+		    <a class="thumbnail" rel="#image-{{ image.id }}" title="{{ image.description }}" href="{{ image.file.url }}">
+		        <img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail image.file 131 75 %}">
+		    </a>
+		</div>
+		{% endfor %}
+		{% endwith %}
+		</div>
+
+
+		<!-- Four Columns -->
+		<div class="container content">
+
+			<div class="row  margin-bottom-30">
+				<div class="col-sm-3 sm-margin-bottom-30" class="box-shadow shadow-effect-2">
+					<a href="{% static 'assets/img/quotes/quote1.jpg' %}" rel="gallery2" class="fancybox img-hover-v1" title="Image 1">
+
+								<span><img class="img-responsive" src="{% static 'assets/img/quotes/quote1.jpg' %}" alt=""></span>
+
+
+					</a>
+				</div>
+				<div class="col-sm-3 sm-margin-bottom-30">
+					<a href="assets/img/quotes/quote2.jpg" rel="gallery2" class="fancybox img-hover-v1" title="Image 2">
+						<span><img class="img-responsive" src="assets/img/quotes/quote2.jpg" alt=""></span>
+					</a>
+				</div>
+				<div class="col-sm-3 sm-margin-bottom-30">
+					<a href="assets/img/quotes/quote3.jpg" rel="gallery2" class="fancybox img-hover-v1" title="Image 2">
+						<span><img class="img-responsive" src="assets/img/quotes/quote3.jpg" alt=""></span>
+					</a>
+				</div>
+				<div class="col-sm-3">
+					<a href="assets/img/quotes/quote4.jpg" rel="gallery2" class="fancybox img-hover-v1" title="Image 3">
+						<span><img class="img-responsive" src="assets/img/quotes/quote4.jpg" alt=""></span>
+					</a>
+				</div>
+
+			</div>
+
+			<div class="row margin-bottom-30">
+
+				<div class="col-sm-3 sm-margin-bottom-30">
+					<a href="assets/img/quotes/quote5.jpg" rel="gallery2" class="fancybox img-hover-v1" title="Image 4">
+						<span><img class="img-responsive" src="assets/img/quotes/quote5.jpg" alt=""></span>
+					</a>
+				</div>
+				<div class="col-sm-3 sm-margin-bottom-30">
+					<a href="assets/img/quotes/quote6.jpg" rel="gallery2" class="fancybox img-hover-v1" title="Image 4">
+						<span><img class="img-responsive" src="assets/img/quotes/quote6.jpg" alt=""></span>
+					</a>
+				</div>
+				<div class="col-sm-3 sm-margin-bottom-30">
+					<a href="assets/img/quotes/quote7.jpg" rel="gallery2" class="fancybox img-hover-v1" title="Image 5">
+						<span><img class="img-responsive" src="assets/img/quotes/quote7.jpg" alt=""></span>
+					</a>
+				</div>
+				<div class="col-sm-3 sm-margin-bottom-30">
+					<a href="assets/img/quotes/quote8.jpg" rel="gallery2" class="fancybox img-hover-v1" title="Image 6">
+						<span><img class="img-responsive" src="assets/img/quotes/quote8.jpg" alt=""></span>
+					</a>
+
+			</div>
+
+			<div class="row">
+			</div>
+				<div class="col-sm-3">
+					<a href="assets/img/quotes/quote9.jpg" rel="gallery2" class="fancybox img-hover-v1" title="Image 7">
+						<span><img class="img-responsive" src="assets/img/quotes/quote9.jpg" alt=""></span>
+					</a>
+				</div>
+				<div class="col-sm-3 sm-margin-bottom-30">
+					<a href="assets/img/quotes/quote10.jpg" rel="gallery2" class="fancybox img-hover-v1" title="Image 8">
+						<span><img class="img-responsive" src="assets/img/quotes/quote10.jpg" alt=""></span>
+					</a>
+				</div>
+				<div class="col-sm-3 sm-margin-bottom-30">
+					<a href="assets/img/quotes/quote11.jpg" rel="gallery2" class="fancybox img-hover-v1" title="Image 9">
+						<span><img class="img-responsive" src="assets/img/quotes/quote11.jpg" alt=""></span>
+					</a>
+				</div>
+				<div class="col-sm-3 sm-margin-bottom-30">
+					<a href="assets/img/quotes/quote12.jpg" rel="gallery2" class="fancybox img-hover-v1" title="Image 10">
+						<span><img class="img-responsive" src="assets/img/quotes/quote12.jpg" alt=""></span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- End Four Columns -->
+		<!--Pegination Centered-->
+					<div class="tag-box tag-box-v7 text-justify">
+						<div class="text-center">
+							<ul class="pagination">
+								<li><a href="quotes_page_1.html">&laquo;</a></li>
+								<li class="active"><a href="quotes_page_1.html">1</a></li>
+								<li><a href="quotes_page_2.html">2</a></li>
+								<li><a href="quotes_page_3.html">3</a></li>
+								<li><a href="quotes_page_4.html">4</a></li>
+								<li><a href="quotes_page_5.html">5</a></li>
+								<li><a href="quotes_page_5.html">&raquo;</a></li>
+							</ul>
+						</div>
+					</div>
+					<!--End Pegination Centered-->
+
+		<hr>
+
+
+		<!-- Call To Action -->
+		<div class="call-action-v1 bg-color-dark">
+			<div class="container">
+				<div class="call-action-v1-box">
+					<div class="call-action-v1-in">
+						<p class="color-light">Unify creative technology company providing key digital services and focused on helping our clients to build a successful business on web and mobile.</p>
+					</div>
+					<div class="call-action-v1-in inner-btn page-scroll">
+						<a href="#portfolio" class="btn-u btn-u-lg btn-brd btn-brd-hover btn-u-light btn-u-block">View Our Portfolio</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Call To Action -->
+
+{% endblock %}

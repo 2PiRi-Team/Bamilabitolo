@@ -1,0 +1,49 @@
+{% extends "basevid.html" %}
+{% load render_video %}
+
+{% block content %}
+<div class="tag-box tag-box-v7 margin-bottom-40">
+
+    <!--=== Breadcrumbs ===-->
+    <div class="breadcrumbs">
+      <div class="container">
+        <h1 class="pull-left">{{ object.title }} {% if courses.count > 1 %}<small> has {{ courses.count }} courses available</small>{% endif %}</h1>
+        <h4><ul class="pull-right breadcrumb">
+          <li><a href="{% url 'categories:list' %}">Categories</a></li>
+          <li class="active"> >>> {{ object.title }} <<< </li>
+        </ul></h4>
+      </div>
+    </div><!--/breadcrumbs-->
+    <!--=== End Breadcrumbs ===-->
+</div>
+
+<div class='row'>
+    <div class='col-sm-12'>
+
+        <div class='col-sm-6 col-sm-offset-6'>
+            {% render_video object.video %}
+        </div>
+    </div>
+
+    <div class='row'>
+    {% for item in featured_courses %}
+        <div class='col-sm-2'>
+        {% include 'courses/snippets/course_featured_display.html' with course=item %}
+        </div>
+    {% endfor %}
+    </div>
+
+
+
+    <div class='row'>
+    {% for item in courses %}
+        <div class='col-md-4 col-sm-6'>
+        {% include 'courses/snippets/course_thumbnail_display.html' with course=item %}
+        </div>
+        {% cycle '' '' '</div><div class="row">' %}
+    {% endfor %}
+    </div>
+
+
+</div>
+{% endblock %}

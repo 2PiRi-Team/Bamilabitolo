@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<title>Project Registration</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<!-- Web Fonts -->
+	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+	<!-- CSS Global Compulsory -->
+	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- CSS Header and Footer -->
+	<link rel="stylesheet" href="assets/css/footers/footer-v7.css">
+
+	<!-- CSS Implementing Plugins -->
+	<link rel="stylesheet" href="assets/plugins/animate.css">
+	<link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+	<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">	
+	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+
+	<!-- CSS Page Style -->
+	<link rel="stylesheet" href="assets/css/pages/page_log_reg_v2.css">
+
+	<!-- CSS Theme -->
+	<link rel="stylesheet" href="assets/css/theme-colors/blue.css" id="style_color">
+	<link rel="stylesheet" href="assets/css/theme-skins/blue.css">
+
+	<!-- CSS Customization -->
+	<link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+
+
+<body>
+	<!--=== Content Part ===-->
+
+	<!-- Begin Content -->
+	<div class="container">
+		<!--Reg Block-->
+		<div class="reg-lg" >
+				
+					<!-- General Unify Forms -->
+					<form action="#" class="sky-form">
+					<div class="col-md-6 col-md-offset-3 col-8 col-sm-offset-9">
+						<h1></h1>
+						<header>Submit a Project</header>
+
+						<fieldset>
+							
+							<div class="row">
+								<section class="col col-6">
+									<label class="input">
+										<i class="icon-prepend fa fa-envelope"></i>
+										<input type="email" name="email" placeholder="E-mail">
+									</label>
+								</section>
+								<section class="col col-6">
+									<label class="input">
+										<i class="icon-prepend fa fa-phone"></i>
+										<input type="tel" name="phone" placeholder="Phone">
+									</label>
+								</section>
+							</div>
+
+							<section>
+								<label class="label"><h4>Professional Field</h4></label>
+								<label class="select">
+									<select>
+										<option value="0">Select the category of your Field</option>
+										<option value="1">Engineering</option>
+										<option value="2">Applied Science</option>										
+									</select>
+									<i></i>
+								</label>
+							</section>
+
+							<section>	
+								<label class="label"><h4>Project Topic</h4></label>								
+									<label class="input">
+										<i class="icon-append fa fa-question-circle"></i>
+										<input type="text" placeholder="Please enter your Project Topic">
+										<b class="tooltip tooltip-top-right">Some helpful information</b>
+									</label>
+							</section>
+
+							
+							<section>
+								<label class="label"><h4>Upload Abstract</h4></label>
+								<label for="file" class="input input-file">
+									<div class="button"><input type="file" id="file" onchange="this.parentNode.nextSibling.value = this.value">Browse</div><input type="text" readonly>
+								</label>
+							</section>
+
+							<section>
+								<label class="label"><h4>Country</h4></label>
+								<label class="select">
+									<select>
+										<option value="0">Select your Country</option>
+										<option value="1">Nigeria</option>
+										<option value="2">Ghana</option>										
+									</select>
+									<i></i>
+								</label>
+							</section>
+
+							<section>
+								<label class="label"><h4>Documents</h4></label>
+								<label class="textarea textarea-expandable">
+									<textarea rows="3"></textarea>
+								</label>
+								<div class="note"><h5><strong>Note:</strong>This is for other Comments or Addons</h5></div>
+							</section>
+						</fieldset>
+						<!-- Modal -->							
+							<button type="button" class="btn-u btn-u-default" onclick="window.history.back();">Back</button>
+							<button class="btn-u btn-u-lg btn-u-blue" data-toggle="modal" data-target=".bs-example-modal-lg">Next</button>
+
+
+							<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+								<div class="modal-dialog modal-lg">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+											
+										</div>
+										<div class="modal-body">
+											<h3>Thank You for your Rigistration</h3>
+											<p><h2><small>Please to continue below is our Contract details.</small></h2></p>
+										
+											<hr>
+											<div class="heading heading-v4 margin-bottom-40">
+											<h3><strong>Contract Details</strong></h3>				
+											</div>
+											<p><h2><small>At 2PiRi, we strive for excellence by providing quality services to our clients in good time. This leads us to provide our services in flexible and affordable packages. </small></h2></p>
+											<p><h2><small><strong>The Standard Package:</strong> This package involves the development of the project within a specified and realistic time as defined by 2PiRi.</small></h2></p>
+											<p><h2><small><strong>The Express Package:</strong> This is a flexible package where the client determines the delivery date of the project which is shorter than that of the Standard package. However, this package attracts additional cost due to its nature.</small></h2></p>
+											<p><h2><small><strong>Ready-made Package: </strong> This package gives the client the flexibility to order already finished projects developed by 2PiRi. Here the client is given a list of finished projects to make a selection.</small></h2></p>
+											<p><h2><small> These packages are designed to give our clients options depending on their needs. </small></h2></p>
+
+											<p><h2><small>We also employ the <strong>S3D</strong> model to our service delivery.</small></h2></p>
+
+
+											<p><h2><small><strong>userStory:</strong> This is a short story of every possible scenario of the function the device or project entails. </small></h2></p>
+
+											<p><h2><small><strong>Design:</strong> This is the phase where the technicalities of the project is given a detailed analysis and scrutiny. It is optional if our clients have their own design that they would like us to develop. However, if the client does not have one, 2PiRi would carry out  this phase at the clients expense.</small></h2></p>
+
+											<p><h2><small><strong>Development:</strong> This is the implementation of the design. This is also optional. The client is at liberty to choose if the agreed designs are to be further developed. However, if the design is to be implemented by us, 2PiRi would develop the agreed design at the client expense.</small></h2></p>
+
+											<p><h2><small><strong>Documentation:</strong> This is a detailed record of the design phase. Also, the client is free to choose if their design should be documented. If documented, it would be done by 2PiRi at the cost of the client.</small></h2></p>
+			<p><h2><small>
+														<strong>Terms:</strong><br>
+			1. All new technology developed by 2PiRi are the sole property of 2PiRi.<br>
+			2. Design is usually completed within one week, however it may extend depending
+			on circumstances prevailing around the time.<br>
+			3. Development is usually completed two weeks after design, however it may 
+			extend depending on circumstances prevailing around the time.<br>
+			4. Documentation is usually completed 3 days after development, however it may 
+			extend depending on circumstances prevailing around the time.<br>
+			5. The cost of each phase; Design, Development, and Documentation varies depending on the project.<br>
+			6. The client bears full responsibility for purchasing components for their projects.<br>
+			7. Purchase of components are made after the design phase is completed.<br>
+			8. The contract is in full effect from the time all the required components have been purchased by 2PiRi or made available by the client.<br>
+			9. At 2PiRi we have a policy to startoff a project if only the client commits him/herself by paying 60% of the agreed Total cost<br>
+			10. During the development of the project, if the client chooses to abruptly terminate the contract, he/she would forfeit 60% of invested funds into the project and would be entitled to 40%.
+			</small></h2></p>
+
+
+										</div>
+										<div class="modal-footer">
+											<button data-dismiss="modal" class="btn-u btn-u-default" type="button">Decline</button>									
+											<a class="btn-u btn-u-blue hover-effect" href="project_registration.html">Proceed</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- End Modal -->				
+
+					</form>
+					<!-- General Unify Forms -->
+
+					<div class="margin-bottom-60"></div>
+</div>
+</div>
+			</div>
+		</div><!--/container-->
+	<!--=== End Content Part ===-->
+</div><!--/wrapper-->
+
+
+
+		<!--=== Footer v7 ===-->
+		<section id="footer-v7" class="contacts-section">
+			<div class="container content-lg">
+				<div class="copyright-section">
+				<p class="copyright"> 2017 &copy; ALL Rights Reserved. <a href="http://www.2piri.com/" target="_blank" class="color-light">2Pi Research Institute</a></p>
+				<ul class="social-icons">
+					<li><a href="https://web.facebook.com/2piRinstitute/" data-original-title="Facebook" class="rounded social_facebook"></a></li>
+								<li><a href="#" data-original-title="Google Plus" class=".rounded social_googleplus"></a></li>
+								<li><a href="#" data-original-title="Linkedin" class="rounded social_linkedin"></a></li>
+								<li><a href="#" data-original-title="Feed" class=".rounded social_rss"></a></li>
+								<li><a href="#" data-original-title="Skype" class="rounded social_skype"></a></li>
+								<li><a href="#" data-original-title="Tumblr" class=".rounded social_tumblr"></a></li>
+								<li><a href="https://twitter.com/2piRinstitute" data-original-title="Twitter" class="rounded social_twitter"></a></li>
+								<li><a href="#" data-original-title="Youtube" class=".rounded social_youtube"></a></li>
+								<li><a href="#" data-original-title="Instagram" class="rounded social_instagram"></a></li>
+								
+				</ul>
+				
+			</div>
+			</div>
+
+			
+		</section>
+		<!--=== End Footer v7 ===-->
+	
+
+
+	<!-- JS Global Compulsory -->
+	<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<!-- JS Implementing Plugins -->
+	<script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
+	<script type="text/javascript" src="assets/plugins/backstretch/jquery.backstretch.min.js"></script>
+	<!-- JS Customization -->
+	<script type="text/javascript" src="assets/js/custom.js"></script>
+	<!-- JS Page Level -->
+	<script type="text/javascript" src="assets/js/app.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			App.init();
+		});
+	</script>
+	<script type="text/javascript">
+		$.backstretch([
+			"assets/img/bg/19.jpg",
+			"assets/img/bg/18.jpg",
+			], {
+				fade: 1000,
+				duration: 7000
+			});
+	</script>
+	<!--[if lt IE 9]>
+	<script src="assets/plugins/respond.js"></script>
+	<script src="assets/plugins/html5shiv.js"></script>
+	<script src="assets/plugins/placeholder-IE-fixes.js"></script>
+	<![endif]-->
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends "faq/base.html" %}
+
+{% block title %}{{ block.super }} {{ topic }}{% endblock %}
+
+{% block body %}
+
+
+<!-- Tab Content 1 -->
+							<div id="home" class="tab-pane fade in active">
+								<div id="accordion-v1" class="panel-group acc-v1">
+								{% for question in questions %}
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a href="#collapse-One" data-parent="#accordion-v1" data-toggle="collapse" class="accordion-toggle">
+												{{ question.text }}
+													<a class="answer">{{ question.answer }}</a>
+												</a>
+											</h4>
+										</div>
+									</div>
+								{% endfor %}
+								</div>
+							</div>
+							<!-- End Tab Content 1 -->
+
+{% endblock %}

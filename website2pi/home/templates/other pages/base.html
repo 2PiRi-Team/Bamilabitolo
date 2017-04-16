@@ -1,0 +1,211 @@
+<!-- BASE TEMPLATE FOR HOME, ABOUT, ETC THAT HAS NO MERGE WITH THE APP -->
+{% load static %}
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<title>2Pi Research Institute</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.png">
+
+	<!-- Web Fonts -->
+	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+	<!-- CSS Global Compulsory -->
+	<link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+	<!-- CSS Header and Footer -->
+	<link rel="stylesheet" href="{% static 'assets/css/headers/header-v6.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/footers/footer-v1.css' %}">
+
+	<!-- CSS Implementing Plugins -->
+	<link rel="stylesheet" href="{% static 'assets/plugins/animate.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/plugins/line-icons/line-icons.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/plugins/font-awesome/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/plugins/brand-buttons/brand-buttons.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/plugins/revolution-slider/rs-plugin/css/settings.css' %}" type="text/css" media="screen">
+	<link rel="stylesheet" href="{% static 'assets/plugins/fancybox/source/jquery.fancybox.css' %}">
+	<!--[if lt IE 9]><link rel="stylesheet" href="{% static 'assets/plugins/revolution-slider/rs-plugin/css/settings-ie8.css' %}" type="text/css" media="screen"><![endif]-->
+
+	<!-- CSS Theme -->
+	<link rel="stylesheet" href="{% static 'assets/css/theme-colors/blue.css' %}" id="style_color">
+	<link rel="stylesheet" href="{% static 'assets/css/theme-skins/blue.css' %}">	
+	<link href="pro_css/app/appblog.css' %}" rel="stylesheet">
+
+	<!-- CSS Customization -->
+	<link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+
+</head>
+
+	
+	
+<body>
+	
+	{% block content %}
+	
+	
+	
+	
+	{% endblock %}
+
+	
+	
+	<!--=== Footer Version 1 ===-->
+	<div class="footer-v1">
+		<div class="footer">
+			<div class="container">
+				<div class="row">
+					<!-- About -->
+					<div class="col-md-3 md-margin-bottom-40">
+						<a href="home.html"><img id="logo-footer" class="footer-logo" src="{% static 'assets/img/footer.png' %}" alt=""></a>
+						
+					</div><!--/col-md-3-->
+					<!-- End About -->
+
+					<div class="col-md-3 md-margin-bottom-40">
+						
+						<ul class="list-unstyled link-list">							
+							
+						</ul>
+					</div><!--/col-md-3-->
+
+					<!-- Link List -->
+					<div class="col-md-3 md-margin-bottom-40">
+						<div class="headline"><h2>Useful Links</h2></div>
+						<ul class="list-unstyled link-list">							
+							<li><a href="#">Products and Services</a><i class="fa fa-angle-right"></i></li>
+							<li><a href="about.html">About us</a><i class="fa fa-angle-right"></i></li>
+							<li><a href="faq.html">FAQs</a><i class="fa fa-angle-right"></i></li>							
+							<li><a href="contact us.html">Contact us</a><i class="fa fa-angle-right"></i></li>
+							<li><a href="#">Community</a><i class="fa fa-angle-right"></i></li>
+						</ul>
+					</div><!--/col-md-3-->
+					<!-- End Link List -->
+
+					<!-- Address -->
+					<div class="col-md-3 map-img md-margin-bottom-40">
+						<div class="headline"><h2>Contact Us</h2></div>
+						<address class="md-margin-bottom-40">
+							<i class="fa fa-home"></i>  04, 2PiRi Street, Shusyen, Ghana <br />
+							<i class="fa fa-phone"></i>  +233 -(0)546998280 <br />	
+							<i class="fa fa-phone"></i>  +233 -(0)546764466 <br />							
+							<i class="fa fa-envelope-o"></i> <a href="mailto:info@2piri.com" class="">  info@2piri.com</a>
+						</address>
+					</div><!--/col-md-3-->
+					<!-- End Address -->
+				</div>
+			</div>
+		</div><!--/footer-->
+
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<p>
+							2017 &copy; All Rights Reserved.
+							<a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+						</p>
+					</div>
+					
+					
+							<!-- Social Links -->
+							<div class="col-md-6">
+								<ul class="social-icons">
+								
+								<li><a href="https://web.facebook.com/2piRinstitute/" data-original-title="Facebook" class="rounded social_facebook"></a></li>
+								<li><a href="#" data-original-title="Google Plus" class=".rounded social_googleplus"></a></li>
+								<li><a href="#" data-original-title="Linkedin" class="rounded social_linkedin"></a></li>
+								<li><a href="#" data-original-title="Feed" class=".rounded social_rss"></a></li>
+								<li><a href="#" data-original-title="Skype" class="rounded social_skype"></a></li>
+								<li><a href="#" data-original-title="Tumblr" class=".rounded social_tumblr"></a></li>
+								<li><a href="https://twitter.com/2piRinstitute" data-original-title="Twitter" class="rounded social_twitter"></a></li>
+								<li><a href="#" data-original-title="Youtube" class=".rounded social_youtube"></a></li>
+								<li><a href="#" data-original-title="Instagram" class="rounded social_instagram"></a></li>
+								
+							</ul>
+							</div>
+							<!-- End Social Links -->
+					
+					
+					
+
+					
+				</div>
+			</div>
+		</div><!--/copyright-->
+	</div>
+	<!--=== End Footer Version 1 ===-->
+
+	
+<!-- JS Global Compulsory -->
+<script type="text/javascript" src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/jquery/jquery-migrate.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+<!-- JS Implementing Plugins -->
+<script type="text/javascript" src="{% static 'assets/plugins/back-to-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/smoothScroll.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/jquery.parallax.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/counter/waypoints.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/counter/jquery.counterup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>
+<!-- JS Customization -->
+<script type="text/javascript" src="{% static 'assets/js/custom.js' %}"></script>
+<!-- JS Page Level -->
+<script type="text/javascript" src="{% static 'assets/js/app.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/plugins/style-switcher.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/plugins/revolution-slider.js' %}"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		App.init();
+		App.initCounter();
+		App.initParallaxBg();
+		StyleSwitcher.initStyleSwitcher();
+		RevolutionSlider.initRSfullScreenOffset();
+	});
+</script>
+	
+		
+  <!-- Inline Script for colors and config objects; used by various external scripts; -->
+  <script>
+    var colors = {
+      "danger-color": "#e74c3c",
+      "success-color": "#81b53e",
+      "warning-color": "#f0ad4e",
+      "inverse-color": "#2c3e50",
+      "info-color": "#2d7cb5",
+      "default-color": "#3498db",
+      "default-light-color": "#cfd9db",
+      "purple-color": "#9D8AC7",
+      "mustard-color": "#d4d171",
+      "lightred-color": "#e15258",
+      "body-bg": "#f6f6f6"
+    };
+    var config = {
+      theme: "html",
+      skins: {
+        "default": {
+          "primary-color": "#3498db"
+        }
+      }
+    };
+  </script>
+
+		
+<!--[if lt IE 9]>
+	<script src="{% static 'assets/plugins/respond.js' %}"></script>
+	<script src="{% static 'assets/plugins/html5shiv.js' %}"></script>
+	<script src="{% static 'assets/plugins/placeholder-IE-fixes.js' %}"></script>
+	<![endif]-->
+
+</body>
+</html>

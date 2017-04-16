@@ -1,0 +1,276 @@
+<!-- BASE TEMPLATE FOR FORUM, COURSE, BLOG ETC THAT MERGE WITH THE APP -->
+{% load static %}
+
+{% load pages_tags mezzanine_tags i18n staticfiles %}
+<head>
+	 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+    <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'favicon.png' %}">
+	  <!-- Web Fonts -->
+	  <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+	  <!-- CSS Global Compulsory -->
+	  <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+	  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+
+	  <!-- CSS Header and Footer -->
+	  <link rel="stylesheet" href="{% static 'assets/css/headers/header-v6.css' %}">
+	  <link rel="stylesheet" href="{% static 'assets/css/footers/footer-v1.css' %}">
+
+
+	  <!-- CSS Implementing Plugins -->
+	  <link rel="stylesheet" href="{% static 'assets/plugins/animate.css' %}">
+	  <link rel="stylesheet" href="{% static 'assets/plugins/line-icons/line-icons.css' %}">
+	  <link rel="stylesheet" href="{% static 'assets/plugins/font-awesome/css/font-awesome.min.css' %}">
+	  <link rel="stylesheet" href="{% static 'assets/plugins/brand-buttons/brand-buttons.css' %}">
+	  <link rel="stylesheet" href="{% static 'assets/plugins/revolution-slider/rs-plugin/css/settings.css' %}" type="text/css" media="screen">
+	  <link rel="stylesheet" href="{% static 'assets/plugins/fancybox/source/jquery.fancybox.css' %}">
+	  <!--[if lt IE 9]><link rel="stylesheet" href="{% static 'assets/plugins/revolution-slider/rs-plugin/css/settings-ie8.css' %}" type="text/css" media="screen"><![endif]-->
+
+
+	  <!-- CSS Theme -->
+	  <link rel="stylesheet" href="{% static 'assets/css/theme-colors/blue.css' %}" id="style_color">
+	  <link rel="stylesheet" href="{% static 'assets/css/theme-skins/blue.css' %}">
+	  <link href="{% static 'pro_css/vendor/all.css' %}" rel="stylesheet">
+	  
+		<link href="pro_css/app/appblog.css' %}" rel="stylesheet">
+
+
+
+	<!-- CSS Customization -->
+	<link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+
+</head>
+
+
+
+
+<body class="header-fixed">
+
+        <!--=== Header v6 ===-->
+    <div class="wrapper">
+        <div class="header-v6 header-white-transparent header-sticky">
+            <!-- Navbar -->
+            <div class="navbar mega-menu" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="menu-container">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            <span class="sr-only">{% trans "Toggle Navigation" %}</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <!-- Navbar Brand -->
+                        <div class="navbar-brand">
+                            <a href="/">
+                                <img class="default-logo" src="{% static 'assets/img/2PiRi logo1.png' %}" alt="Logo">
+                                <img class="shrink-logo" src="{% static 'assets/img/logo-dark.png' %}" alt="Logo">
+                            </a>
+                        </div>
+                        <!-- ENd Navbar Brand -->
+
+
+                        <!-- Header Inner Right -->
+                        <div class="header-inner-right">
+                            <ul class="menu-icons-list">
+                                <li class="menu-icons">
+                                    <i class="menu-icons-style search search-close search-btn fa fa-search"></i>
+                                    <div class="search-open animated fadeIn form-control" >
+                                             {% block navbar_search_form %}{% search_form %}{% endblock %}
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End Header Inner Right -->
+                    </div>
+
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-responsive-collapse">
+                        <div class="menu-container">
+                            <ul class="nav navbar-nav">
+                                <!-- Home -->
+                                {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}
+
+                                <!-- End Home -->
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    <!--/navbar-collapse-->
+        </div>
+    </div>
+            <!-- End Navbar -->
+        <!--=== End Header v6 ===-->
+
+
+
+
+		  {% block content %}{% endblock %}
+
+
+
+
+
+
+
+  <!--=== Footer Version 1 ===-->
+  <div class="footer-v1">
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- About -->
+          <div class="col-md-3 md-margin-bottom-40">
+            <a href="/"><img id="logo-footer" class="footer-logo" src="{% static 'assets/img/footer.png' %}" alt=""></a>
+
+          </div><!--/col-md-3-->
+          <!-- End About -->
+
+          <div class="col-md-3 md-margin-bottom-40">
+
+            <ul class="list-unstyled link-list">
+
+            </ul>
+          </div><!--/col-md-3-->
+
+          <!-- Link List -->
+          <div class="col-md-3 md-margin-bottom-40">
+            <div class="headline"><h2>Useful Links</h2></div>
+            <ul class="list-unstyled link-list">
+              <li>{% page_menu "pages/menus/footer.html" %}</li>
+
+            </ul>
+          </div><!--/col-md-3-->
+          <!-- End Link List -->
+
+          <!-- Address -->
+          <div class="col-md-3 map-img md-margin-bottom-40">
+            <div class="headline"><h2>Contact Us</h2></div>
+            <address class="md-margin-bottom-40">
+              <i class="fa fa-home"></i>  04, 2PiRi Street, Suhyen, Ghana <br />
+              <i class="fa fa-phone"></i>  +233 -(0)546998280 <br />
+              <i class="fa fa-phone"></i>  +233 -(0)546764466 <br />
+              <i class="fa fa-envelope-o"></i> <a href="mailto:info@2piri.com" class="">  info@2piri.com</a>
+            </address>
+          </div><!--/col-md-3-->
+          <!-- End Address -->
+        </div>
+      </div>
+    </div><!--/footer-->
+
+    <div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p>
+              2017 &copy; All Rights Reserved.
+              <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            </p>
+          </div>
+
+
+              <!-- Social Links -->
+              <div class="col-md-6">
+                <ul class="social-icons">
+
+                <li><a href="https://web.facebook.com/2piRinstitute/" data-original-title="Facebook" class="rounded social_facebook"></a></li>
+                <li><a href="#" data-original-title="Google Plus" class=".rounded social_googleplus"></a></li>
+                <li><a href="#" data-original-title="Linkedin" class="rounded social_linkedin"></a></li>
+                <li><a href="#" data-original-title="Feed" class=".rounded social_rss"></a></li>
+                <li><a href="#" data-original-title="Skype" class="rounded social_skype"></a></li>
+                <li><a href="#" data-original-title="Tumblr" class=".rounded social_tumblr"></a></li>
+                <li><a href="https://twitter.com/2piRinstitute" data-original-title="Twitter" class="rounded social_twitter"></a></li>
+                <li><a href="#" data-original-title="Youtube" class=".rounded social_youtube"></a></li>
+                <li><a href="#" data-original-title="Instagram" class="rounded social_instagram"></a></li>
+
+              </ul>
+              </div>
+              <!-- End Social Links -->
+
+
+
+
+
+        </div>
+      </div>
+    </div><!--/copyright-->
+  </div>
+  <!--=== End Footer Version 1 ===-->
+
+
+
+	<!-- JS Global Compulsory -->
+	<script type="text/javascript" src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/plugins/jquery/jquery-migrate.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+	<!-- JS Implementing Plugins -->
+	<script type="text/javascript" src="{% static 'assets/plugins/back-to-top.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/plugins/smoothScroll.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/plugins/jquery.parallax.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/plugins/counter/waypoints.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/plugins/counter/jquery.counterup.min.js' %}"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script type="text/javascript" src="{% static 'assets/plugins/gmap/gmap.js' %}"></script>
+	<!-- JS Customization -->
+	<script type="text/javascript" src="{% static 'assets/js/custom.js' %}"></script>
+	<!-- JS Page Level -->
+	<script type="text/javascript" src="{% static 'assets/js/app.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/js/pages/page_contacts.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/js/plugins/style-switcher.js' %}"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			App.init();
+			App.initCounter();
+			App.initParallaxBg();
+			ContactPage.initMap();
+		});
+	</script>
+
+  <!-- Inline Script for colors and config objects; used by various external scripts; -->
+  <script>
+    var colors = {
+      "danger-color": "#e74c3c",
+      "success-color": "#81b53e",
+      "warning-color": "#f0ad4e",
+      "inverse-color": "#2c3e50",
+      "info-color": "#2d7cb5",
+      "default-color": "#6e7882",
+      "default-light-color": "#cfd9db",
+      "purple-color": "#9D8AC7",
+      "mustard-color": "#d4d171",
+      "lightred-color": "#e15258",
+      "body-bg": "#f6f6f6"
+    };
+    var config = {
+      theme: "html",
+      skins: {
+        "default": {
+          "primary-color": "#42a5f5"
+        }
+      }
+    };
+  </script>
+
+  <!-- Vendor Scripts Bundle
+    Includes all of the 3rd party JavaScript libraries above.
+    The bundle was generated using modern frontend development tools that are provided with the package
+    To learn more about the development process, please refer to the documentation.
+    Do not use it simultaneously with the separate bundles above. -->
+  <script src="{% static 'pro_js/vendor/all.js' %}"></script>
+
+  <!-- App Scripts Bundle
+    Includes Custom Application JavaScript used for the current theme/module;
+    Do not use it simultaneously with the standalone modules below. -->
+  <script src="{% static 'pro_js/app/app.js' %}"></script>
+
+
+</body>
+
+</html>

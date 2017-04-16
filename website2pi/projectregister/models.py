@@ -1,0 +1,35 @@
+from __future__ import unicode_literals
+from django.db import models
+
+
+
+# Create your models here.
+class Stdproject(models.Model):
+	email = models.EmailField()
+	phone = models.IntegerField()
+	PROFESSIONAL = (
+    ('Enr', 'Engineering'),
+    ('Compt Sci', 'Computer Science'),    
+)
+	project_topic = models.CharField(max_length=50)
+	abstract = models.CharField(max_length=30)
+	COUNTRY = (
+    ('Nig', 'Nigeria'),
+    ('Gh', 'Ghana'),    
+)
+	city = models.CharField(max_length=80, default='Default_Value')
+	post_code = models.IntegerField(default='Default_Value')
+	ref_id = models.CharField(max_length=120, default='Default_Value', unique=True)
+	ip_address = models.CharField(max_length=120, default='Default_Value')
+	timestamp = models.DateTimeField(auto_now_add = True, auto_now = False)
+	updated = models.DateTimeField(auto_now_add = False, auto_now = True)
+	friend = models.ForeignKey("self", related_name='referral', null=True, blank=True)	
+	professional = models.CharField(max_length=30, choices=PROFESSIONAL)
+	country = models.CharField(max_length=30, choices=COUNTRY)
+	def __unicode__(self):
+		return "%s" %(self.email)
+
+	class Meta:
+		unique_together = ("email", "ref_id", "phone", "city", "post_code", "professional", "project_topic", "abstract", "country")
+	
+	

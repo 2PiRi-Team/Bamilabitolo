@@ -1,0 +1,316 @@
+{% extends "baseprdserv.html" %}
+{% load static %}
+
+
+{% block body %}
+
+		<!--=== Breadcrumbs v3 ===-->
+		<div class="breadcrumbs-v2 img-v2 text-center">
+			<div class="container">
+				<h1></h1>
+			</div><!--/end container-->
+		</div>
+		<!--=== End Breadcrumbs v3 ===-->
+
+
+
+
+		<!--=== Slider ===-->
+		<div class="tp-banner-container">
+			<div class="tp-banner">
+				<ul>
+				<!-- SLIDE -->
+						<li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="3000" data-title="fade">
+							<!-- MAIN IMAGE -->
+							<img src="{% static 'assets/img/bg/18.jpg' %}"  alt=" " class='img-responsive' data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+
+
+							<!-- LAYER -->
+							<div class="tp-caption sfb"
+							data-x="850"
+							data-hoffset="0"
+							data-y="550"
+							data-speed="2500"
+							data-start="3000"
+							data-easing="Power4.easeOut"
+							data-endspeed="300"
+							data-endeasing="Power1.easeIn"
+							data-captionhidden="off"
+							style="z-index: 6">
+							<img src="{% static 'pro_images/slide_one1w.png'  %}" alt="">
+							</div>
+						</li>
+				<!-- END SLIDE -->
+			</ul>
+			<div class="tp-bannertimer tp-bottom"></div>
+		</div>
+	</div>
+	<!--=== End Slider ===-->
+
+
+
+		<!--=== Summit Project  ===-->
+		<div class="purchase">
+			<div class="container overflow-h">
+				<div class="row">
+					<div class="col-md-9 animated fadeInLeft">
+						<span>Get your final year project developed and delivered in record time.</span>
+						<p><h1><small>At 2pi, we strive for excellence by providing quality services to our customers in good time. This leads us to provide our services in flexible and affordable packages.</small></h1></p>
+					</div>
+					<div class="col-md-1 btn-buy animated fadeInRight">
+						<a href="/projectreg" class="btn-u btn-u-lg btn-u-blue"><i class=" fa  fa-file-text "></i> Submit a Project </a>
+					</div>
+				</div>
+			</div>
+		</div><!--/row-->
+		<!-- End Summit Project  -->
+
+		<!--=== Content Part ===-->
+		<div class="container content-sm">
+
+
+					<!-- S3D -->
+					<div class="tab-v1">
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="#s3d-line" data-toggle="tab"><h4><i class="fa fa-chevron-circle-right"></i><strong>S3D</strong></h4></a></li>
+							<li><a href="#userstory" data-toggle="tab"><h4><i class="fa fa-chevron-circle-right"></i> user<strong>S</strong>tory</h4></a></li>
+							<li><a href="#design" data-toggle="tab"><h4><i class="fa fa-chevron-circle-right"></i> <strong>D</strong>esign</h4></a></li>
+							<li><a href="#development" data-toggle="tab"><h4><i class="fa fa-chevron-circle-right"></i> <strong>D</strong>evelopment</h4></a></li>
+							<li><a href="#documentation" data-toggle="tab"><h4><i class="fa fa-chevron-circle-right"></i> <strong>D</strong>ocumentation</h4></a></li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane fade in active" id="s3d-line">
+								<div class="row">
+									<div class="col-md-8">
+										<img alt="" class="pull-left lft-img-margin img-width-200" src="{% static 'assets/img/main/userstoryPi.png' %}">
+										<h3><strong>S3D</strong></h3>
+										<p>
+
+										<h4> At 2Pi we use the S3D to deal with our clients and projects
+
+										</h4>
+
+										</p>
+									</div>
+								</div>
+							</div>
+
+									<div class="tab-pane fade in" id="userstory">
+										<img alt="" class="pull-left lft-img-margin img-width-200" src="{% static 'assets/img/main/userstoryPix.png' %}">
+										<h3>user<strong>S</strong>tory </h3>
+										<p><h4>write something Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+										</h4></p>
+									</div>
+									<div class="tab-pane fade in" id="design">
+										<img alt="" class="pull-left lft-img-margin img-width-200" src="{% static 'assets/img/main/designPix.png' %}">
+										<h3><strong>D</strong>esign </h3>
+										<p><h4>
+										This is the phase where the technicalities of the project is given a detailed analysis and scrutiny.
+										It is optional if our customers have their own design that they would like us to implement. However,
+										if the customer does not have one, 2piri would make one at the cost of the customer.
+										</h4></p>
+									</div>
+									<div class="tab-pane fade in" id="development">
+										<img alt="" class="pull-left lft-img-margin img-width-200" src="{% static 'assets/img/main/developmentPix.png' %}">
+										<h3><strong>D</strong>evelopment</h3>
+										<p><h4>
+										This is the implementation of the design. This is also optional. The customer is at liberty to choose if designs are implemented. However,
+										if the design is to be implemented, 2piri would develop the design provided or made by it at the cost of the customer.	</h4></p>
+									</div>
+									<div class="tab-pane fade in" id="documentation">
+										<img alt="" class="pull-left lft-img-margin img-width-200" src="{% static 'assets/img/main/documentationPix.png' %}">
+										<h3><strong>D</strong>ocumentation</h3>
+										<p><h4>
+											This is a detailed record the any or all of the above mentioned phases.
+											Also, the customer is free to choose if their design should be documented.
+											If the they are to be documented, they would be done by 2piri at the cost of the customer. </h4></p>
+									</div>
+							</div>
+						</div>
+					<!-- End S3D -->
+
+<br />
+
+
+<div class="container content-sm">
+<div class="headline"><h2>    </h2></div>
+	<div class="row">
+		<div class="col-sm-6 content-boxes-v3 content-boxes-v3-right sm-margin-bottom-30">
+			<div class="margin-bottom-30">
+				<i class="icon-custom icon-md rounded-x icon-bg-blue icon-line icon-trophy"></i>
+				<div class="content-boxes-in-v3">
+					<h2 class="heading-sm"><strong>Innovation Leader</strong></h2>
+					<p><h2><small>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</small></h2></p>
+				</div>
+			</div>
+			<div class="clearfix margin-bottom-30">
+				<i class="icon-custom icon-md rounded-x icon-bg-darker icon-line icon-directions"></i>
+				<div class="content-boxes-in-v3">
+					<h2 class="heading-sm"><strong>Best Solutions &amp; Approaches</strong></h2>
+					<p><h2><small>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</small></h2></p>
+				</div>
+			</div>
+			<div class="clearfix">
+				<i class="icon-custom icon-md rounded-x icon-bg-blue icon-line icon-rocket"></i>
+				<div class="content-boxes-in-v3">
+					<h2 class="heading-sm"><strong>SEO &amp; Advertising</strong></h2>
+					<p><h2><small>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</small></h2></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-6 content-boxes-v3">
+			<div class="clearfix margin-bottom-30">
+				<i class="icon-custom icon-md rounded-x icon-bg-darker icon-line icon-bar-chart"></i>
+				<div class="content-boxes-in-v3">
+					<h2 class="heading-sm"><strong>Analysis &amp; Consulting</strong></h2>
+					<p><h2><small>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</small></h2></p>
+				</div>
+			</div>
+			<div class="clearfix margin-bottom-30">
+				<i class="icon-custom icon-md rounded-x icon-bg-blue icon-line icon-badge"></i>
+				<div class="content-boxes-in-v3">
+					<h2 class="heading-sm"><strong>Quality Service &amp; Support</strong></h2>
+					<p><h2><small>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</small></h2></p>
+				</div>
+			</div>
+			<div class="clearfix">
+				<i class="icon-custom icon-md rounded-x icon-bg-darker icon-line icon-envelope"></i>
+				<div class="content-boxes-in-v3">
+					<h2 class="heading-sm"><strong>Email Marketing</strong></h2>
+					<p><h2><small>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</small></h2></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+			<!-- Recent Works -->
+			<div class="headline"><h2>Recent Works</h2></div>
+			<div class="row margin-bottom-20">
+				<div class="col-md-3 col-sm-6">
+					<div class="thumbnails thumbnail-style thumbnail-kenburn">
+						<div class="thumbnail-img">
+							<div class="overflow-hidden">
+								<img class="img-responsive" src="{% static 'assets/img/main/default.jpg' %}" alt="">
+							</div>
+							<a class="btn-more hover-effect" href="#">read more +</a>
+						</div>
+						<div class="caption">
+							<h3><a class="hover-effect" href="#">Project One</a></h3>
+							<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="thumbnails thumbnail-style thumbnail-kenburn">
+						<div class="thumbnail-img">
+							<div class="overflow-hidden">
+								<img class="img-responsive" src="{% static 'assets/img/main/default.jpg' %}" alt="">
+							</div>
+							<a class="btn-more hover-effect" href="#">read more +</a>
+						</div>
+						<div class="caption">
+							<h3><a class="hover-effect" href="#">Project Two</a></h3>
+							<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="thumbnails thumbnail-style thumbnail-kenburn">
+						<div class="thumbnail-img">
+							<div class="overflow-hidden">
+								<img class="img-responsive" src="{% static 'assets/img/main/default.jpg' %}" alt="">
+							</div>
+							<a class="btn-more hover-effect" href="#">read more +</a>
+						</div>
+						<div class="caption">
+							<h3><a class="hover-effect" href="#">Project Three</a></h3>
+							<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="thumbnails thumbnail-style thumbnail-kenburn">
+						<div class="thumbnail-img">
+							<div class="overflow-hidden">
+								<img class="img-responsive" src="{% static 'assets/img/main/default.jpg' %}" alt="">
+							</div>
+							<a class="btn-more hover-effect" href="#">read more +</a>
+						</div>
+						<div class="caption">
+							<h3><a class="hover-effect" href="#">Project Four</a></h3>
+							<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Recent Works -->
+
+			<!-- Info Blokcs -->
+			<div class="row margin-bottom-30">
+				<!-- Welcome Block -->
+				<div class="col-md-8 md-margin-bottom-40">
+					<div class="headline"><h2>Welcome To Unify</h2></div>
+					<div class="row">
+						<div class="col-sm-4">
+							<img class="img-responsive margin-bottom-20" src="{% static 'assets/img/main/default.jpg' %}" alt="">
+						</div>
+						<div class="col-sm-8">
+							<p>Unify is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals. It works on all major web browsers, tablets and phone.</p>
+							<ul class="list-unstyled margin-bottom-20">
+								<li><i class="fa fa-check color-blue"></i> Donec id elit non mi porta gravida</li>
+								<li><i class="fa fa-check color-blue"></i> Corporate and Creative</li>
+								<li><i class="fa fa-check color-blue"></i> Responsive Bootstrap Template</li>
+								<li><i class="fa fa-check color-blue"></i> Corporate and Creative</li>
+							</ul>
+						</div>
+					</div>
+
+					<blockquote class="hero-unify">
+						<p>Award winning digital agency. We bring a personal and effective approach to every project we work on, which is why. Unify is an incredibly beautiful responsive Bootstrap Template for corporate professionals.</p>
+						<small>CEO, Jack Bour</small>
+					</blockquote>
+				</div><!--/col-md-8-->
+
+				<!-- Latest Shots -->
+				<div class="col-md-4">
+					<div class="headline"><h2>Latest Shots</h2></div>
+					<div id="myCarousel" class="carousel slide carousel-v1">
+						<div class="carousel-inner">
+							<div class="item active">
+								<img src="{% static 'assets/img/main/default.jpg' %}" alt="">
+								<div class="carousel-caption">
+									<p>Facilisis odio, dapibus ac justo acilisis gestinas.</p>
+								</div>
+							</div>
+							<div class="item">
+								<img src="{% static 'assets/img/main/default.jpg' %}" alt="">
+								<div class="carousel-caption">
+									<p>Cras justo odio, dapibus ac facilisis into egestas.</p>
+								</div>
+							</div>
+							<div class="item">
+								<img src="{% static 'assets/img/main/default.jpg' %}" alt="">
+								<div class="carousel-caption">
+									<p>Justo cras odio apibus ac afilisis lingestas de.</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="carousel-arrow">
+							<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+								<i class="fa fa-angle-left"></i>
+							</a>
+							<a class="right carousel-control" href="#myCarousel" data-slide="next">
+								<i class="fa fa-angle-right"></i>
+							</a>
+						</div>
+					</div>
+				</div><!--/col-md-4-->
+			</div>
+			<!-- End Info Blokcs -->
+{% endblock %}

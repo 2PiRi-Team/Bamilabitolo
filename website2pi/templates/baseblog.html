@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
+{% load pages_tags mezzanine_tags i18n staticfiles %}
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+    <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'favicon.png' %}">
+
+    <!-- Web Fonts -->
+    <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
+
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="{% static 'assets/css/headers/header-v6.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/footers/footer-v1.css' %}">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/line-icons/line-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/brand-buttons/brand-buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/revolution-slider/rs-plugin/css/settings.css' %}" type="text/css" media="screen">
+  <link rel="stylesheet" href="{% static 'assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/fancybox/source/jquery.fancybox.css' %}">
+    <!--[if lt IE 9]><link rel="stylesheet" href="{% static 'assets/plugins/revolution-slider/rs-plugin/css/settings-ie8.css' %}" type="text/css" media="screen"><![endif]-->
+
+
+    <!-- CSS Page Style -->
+    <link rel="stylesheet" href="{% static 'assets/css/pages/shortcode_timeline1.css' %}">
+
+
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="{% static 'assets/css/theme-colors/blue.css' %}" id="style_color">
+    <link rel="stylesheet" href="{% static 'assets/css/theme-skins/blue.css' %}">
+    <link href="pro_css/app/appblog.css' %}" rel="stylesheet">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+
+{% compress css %}
+{% ifinstalled cartridge.shop %}
+<link rel="stylesheet" href="{% static "css/cartridge.css" %}">
+{% endifinstalled %}
+{% block extra_css %}{% endblock %}
+{% endcompress %}
+
+{% compress js %}
+<script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
+<script src="{% static "js/bootstrap.js" %}"></script>
+<script src="{% static "js/bootstrap-extras.js" %}"></script>
+{% block extra_js %}{% endblock %}
+{% endcompress %}
+
+<!--[if lt IE 9]>
+<script src="{% static "js/html5shiv.js" %}"></script>
+<script src="{% static "js/respond.min.js" %}"></script>
+<![endif]-->
+
+
+{% block extra_head %}{% endblock %}
+</head>
+
+
+
+<body class="header-fixed">
+
+        <!--=== Header v6 ===-->
+    <div class="wrapper">
+        <div class="header-v6 header-white-transparent header-sticky">
+            <!-- Navbar -->
+            <div class="navbar mega-menu" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="menu-container">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            <span class="sr-only">{% trans "Toggle Navigation" %}</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <!-- Navbar Brand -->
+                        <div class="navbar-brand">
+                            <a href="/">
+                                <img class="default-logo" src="{% static 'assets/img/2PiRi logo1.png' %}" alt="Logo">
+                                <img class="shrink-logo" src="{% static 'assets/img/logo-dark.png' %}" alt="Logo">
+                            </a>
+                        </div>
+                        <!-- ENd Navbar Brand -->
+
+
+                        <!-- Header Inner Right -->
+                        <div class="header-inner-right">
+                            <ul class="menu-icons-list">
+                                <li class="menu-icons">
+                                    <i class="menu-icons-style search search-close search-btn fa fa-search"></i>
+                                    <div class="search-open animated fadeIn form-control" >
+                                             {% block navbar_search_form %}{% search_form %}{% endblock %}
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End Header Inner Right -->
+                    </div>
+
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-responsive-collapse">
+                        <div class="menu-container">
+                            <ul class="nav navbar-nav">
+                                <!-- Home -->
+                                {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}
+
+                                <!-- End Home -->
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    <!--/navbar-collapse-->
+        </div>
+    </div>
+            <!-- End Navbar -->
+        <!--=== End Header v6 ===-->
+
+
+    <!--=== Breadcrumbs v3 ===-->
+    <div class="breadcrumbs-v3 img-v3 text-center">
+      <div class="container">
+        <h1></h1>
+      </div><!--/end container-->
+    </div>
+    <!--=== End Breadcrumbs v3 ===-->
+
+
+
+<!-- Heading v1 -->
+        <div class="shadow-wrapper">
+                    <div class="tag-box tag-box-v1 box-shadow shadow-effect-2">
+
+                        <div class="heading heading-v1 margin-bottom-40">
+                            <h2><a href="blog.html">B<span class="color-blue">log</span></a></h2>
+                            <p>Ask our awesome community</p>
+                        </div>
+                    </div>
+        </div>
+<!-- End Heading v1 -->
+{% block main %}
+
+{% endblock %}
+  <!--=== Footer Version 1 ===-->
+  <div class="footer-v1">
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- About -->
+          <div class="col-md-3 md-margin-bottom-40">
+            <a href="/"><img id="logo-footer" class="footer-logo" src="{% static 'assets/img/footer.png' %}" alt=""></a>
+
+          </div><!--/col-md-3-->
+          <!-- End About -->
+
+          <div class="col-md-3 md-margin-bottom-40">
+
+            <ul class="list-unstyled link-list">
+
+            </ul>
+          </div><!--/col-md-3-->
+
+          <!-- Link List -->
+          <div class="col-md-3 md-margin-bottom-40">
+            <div class="headline"><h2>Useful Links</h2></div>
+            <ul class="list-unstyled link-list">
+              <li>{% page_menu "pages/menus/footer.html" %}</li>
+            </ul>
+          </div><!--/col-md-3-->
+          <!-- End Link List -->
+
+          <!-- Address -->
+          <div class="col-md-3 map-img md-margin-bottom-40">
+            <div class="headline"><h2>Contact Us</h2></div>
+            <address class="md-margin-bottom-40">
+              <i class="fa fa-home"></i>  04, 2PiRi Street, Suhyen, Ghana <br />
+              <i class="fa fa-phone"></i>  +233 -(0)546998280 <br />
+              <i class="fa fa-phone"></i>  +233 -(0)546764466 <br />
+              <i class="fa fa-envelope-o"></i> <a href="mailto:info@2piri.com" class="">  info@2piri.com</a>
+            </address>
+          </div><!--/col-md-3-->
+          <!-- End Address -->
+        </div>
+      </div>
+    </div><!--/footer-->
+
+    <div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p>
+              2017 &copy; All Rights Reserved.
+              <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            </p>
+          </div>
+
+
+              <!-- Social Links -->
+              <div class="col-md-6">
+                <ul class="social-icons">
+
+                <li><a href="https://web.facebook.com/2piRinstitute/" data-original-title="Facebook" class="rounded social_facebook"></a></li>
+                <li><a href="#" data-original-title="Google Plus" class=".rounded social_googleplus"></a></li>
+                <li><a href="#" data-original-title="Linkedin" class="rounded social_linkedin"></a></li>
+                <li><a href="#" data-original-title="Feed" class=".rounded social_rss"></a></li>
+                <li><a href="#" data-original-title="Skype" class="rounded social_skype"></a></li>
+                <li><a href="#" data-original-title="Tumblr" class=".rounded social_tumblr"></a></li>
+                <li><a href="https://twitter.com/2piRinstitute" data-original-title="Twitter" class="rounded social_twitter"></a></li>
+                <li><a href="#" data-original-title="Youtube" class=".rounded social_youtube"></a></li>
+                <li><a href="#" data-original-title="Instagram" class="rounded social_instagram"></a></li>
+
+              </ul>
+              </div>
+              <!-- End Social Links -->
+          {% ifinstalled mezzanine.mobile %}
+    <span class="separator">|</span>
+    <a href="{% url "set_device" "mobile" %}?next={{ request.path }}">{% trans "View Mobile Site" %}</a>
+    {% endifinstalled %}
+
+
+        </div>
+      </div>
+    </div><!--/copyright-->
+  </div>
+  <!--=== End Footer Version 1 ===-->
+
+
+
+    <!-- JS Global Compulsory -->
+    <script type="text/javascript" src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/plugins/jquery/jquery-migrate.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- JS Implementing Plugins -->
+     <script type="text/javascript" src="{% static 'assets/js/likes.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/plugins/back-to-top.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/plugins/smoothScroll.js' %}"></script>
+  <script type="text/javascript" src="{% static 'assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js' %}"></script>
+    <!-- JS Customization -->
+    <script type="text/javascript" src="{% static 'assets/js/custom.js' %}"></script>
+  <script type="text/javascript" src="{% static 'assets/js/forms/login.js' %}"></script>
+  <script type="text/javascript" src="{% static 'assets/js/forms/contact.js' %}"></script>
+    <!-- JS Page Level -->
+    <script type="text/javascript" src="{% static 'assets/js/app.js' %}"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            App.init();
+            LoginForm.initLoginForm();
+            ContactForm.initContactForm();
+            StyleSwitcher.initStyleSwitcher();
+        });
+    </script>
+    <!--[if lt IE 9]>
+        <script src="assets/plugins/respond.js"></script>
+        <script src="assets/plugins/html5shiv.js"></script>
+        <script src="assets/plugins/placeholder-IE-fixes.js"></script>
+    <![endif]-->
+</body>
+</html>

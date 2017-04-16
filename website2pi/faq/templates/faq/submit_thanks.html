@@ -1,0 +1,41 @@
+{% extends "faq/base.html" %}
+
+{% block title %}<h3>Submit a Question</h3>
+							<h5><p>
+							  Thanks for the Question
+							</p></h5>{% endblock %}
+
+
+{% block body %}
+<!--=== Content Part ===-->
+		<div class="container content">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<form class="reg-page" action="#" class="sky-form" method="POST">{% csrf_token %}	
+						
+							
+						<hr>
+
+						
+						<!-- Alert Messages -->
+							<div class="tab-pane fade in active" id="alert-1">
+								<div class="margin-bottom-15"></div>
+								
+								<div class="alert alert-info fade in">
+									<h4><strong>Your question was submitted Successfully.<br></strong> It will be included in the FAQ  once it's been reviewed <br>Thanks!! !</h4>
+								</div>
+								
+							</div>
+							<!-- End Alert Messages -->
+							
+
+						<hr>
+					</form>
+				</div>
+			</div>
+		</div><!--/container-->
+		<!--=== End Content Part ===-->
+
+{% endblock %}
+
+

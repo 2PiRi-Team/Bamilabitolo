@@ -1,0 +1,37 @@
+{% extends 'baselogin.html' %}
+{% load static %}
+
+<body >
+
+{% block body %}
+
+	<!--=== Content Part ===-->
+	<div class="container-fluid">
+		<div class="row equal-height-columns">
+			<div class="col-md-6 col-sm-6 hidden-xs image-block equal-height-column"></div>
+
+			<div class="col-md-6 col-sm-6 form-block equal-height-column">
+				<div class="reg-block">
+					<a href="/">
+						<img src="assets/img/logo-dark1.png" alt="">
+					</a>
+					<h2 class="margin-bottom-30">Registration Successful</h2>
+					
+					<!-- Alert Messages -->
+							<div class="tab-pane fade in active" id="alert-1">
+								<div class="margin-bottom-15"></div>
+								
+								<div class="alert alert-info fade in">
+									<strong>Your Account has been added Successfully <br></strong> Thanks!! !
+								</div>
+								
+							</div>
+							<!-- End Alert Messages -->
+						
+					<button class="btn-u btn-block rounded" href="/">Click here to Login</button>
+				</div>
+			</div>
+		</div>
+	</div><!--/container-->
+	<!--=== End Content Part ===-->
+	{% endblock %}

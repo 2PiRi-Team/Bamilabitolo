@@ -1,0 +1,192 @@
+{% extends "baseblog.html" %}
+
+{% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
+
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Blog" %}{% endif %}{% endblock %}
+          
+
+
+
+
+
+
+
+<!--=== Content Part ===-->
+        <div class="container content">
+            <div class="row blog-page">
+                <!-- Left Sidebar -->
+                <div class="col-md-9 md-margin-bottom-40"> 
+
+
+{% block meta_keywords %}{% metablock %}
+{% keywords_for page as keywords %}
+{% for keyword in keywords %}
+    {% if not forloop.first %}, {% endif %}
+    {{ keyword }}
+{% endfor %}
+{% endmetablock %}{% endblock %}
+
+
+
+{% block meta_description %}{% metablock %}
+{{ page.description }}
+{% endmetablock %}{% endblock %}
+
+
+
+{% block breadcrumb_menu %}
+{{ block.super }}
+{% if tag or category or year or month or author %}
+<li>{% spaceless %}
+{% if tag %}
+    {% trans "Tag:" %} {{ tag }}
+{% else %}{% if category %}
+    {% trans "Category:" %} {{ category }}
+{% else %}{% if year or month %}
+    {% if month %}{{ month }}, {% endif %}{{ year }}
+{% else %}{% if author %}
+    {% trans "Author:" %} {{ author.get_full_name|default:author.username }}
+{% endif %}{% endif %}{% endif %}{% endif %}
+{% endspaceless %}
+</li>
+{% endif %}
+{% endblock %}
+
+
+
+
+{% block main %}
+
+{% if tag or category or year or month or author %}
+    {% block blog_post_list_filterinfo %}
+    <p>
+    {% if tag %}
+        {% trans "Viewing posts tagged" %} {{ tag }}
+    {% else %}{% if category %}
+        {% trans "Viewing posts for the category" %} {{ category }}
+    {% else %}{% if year or month %}
+        {% trans "Viewing posts from" %} {% if month %}{{ month }}, {% endif %}
+        {{ year }}
+    {% else %}{% if author %}
+        {% trans "Viewing posts by" %}
+        {{ author.get_full_name|default:author.username }}
+    {% endif %}{% endif %}{% endif %}{% endif %}
+    {% endblock %}
+    </p>
+{% else %}
+    {% if page %}
+    {% block blog_post_list_pagecontent %}
+    {% if page.get_content_model.content %}
+        {% editable page.get_content_model.content %}
+        {{ page.get_content_model.content|richtext_filters|safe }}
+        {% endeditable %}
+    {% endif %}
+    {% endblock %}
+    {% endif %}
+{% endif %}
+
+
+
+{% for blog_post in blog_posts.object_list %}
+            {% block blog_post_list_post_title %}
+            {% editable blog_post.title %}
+                    <!--Blog Post-->
+                    <div class="row blog blog-medium margin-bottom-40">
+
+                        <div class="col-md-5">
+                            <img class="img-responsive" src="{% static 'assets/img/img22.jpg' %}" alt="">
+                        </div>                
+
+
+                        <div class="col-md-7">
+                             <h2><a href="{{ blog_post.get_absolute_url }}">{{ blog_post.title }}</a></h2>
+            {% endeditable %}
+            {% endblock %}
+
+                            <ul class="list-unstyled list-inline blog-info">
+                                <li><i class=" post-meta fa fa-pencil-square-o"></i> Poster by: 
+                                    {% with blog_post.user as author %}<a href="{% url "blog_post_list_author" author %}">  {{ author.get_full_name|default:author.username }}</a>
+                                    {% endwith %} 
+                                    {% with blog_post.categories.all as categories %}
+                                    {% if categories %}
+                                    {% trans "in" %}
+                                    {% for category in categories %}
+                                    <a href="{% url "blog_post_list_category" category.slug %}">{{ category }}</a>{% if not forloop.last %}, {% endif %}
+                                    {% endfor %}
+                                    {% endif %}
+                                    {% endwith %}
+                                </li>
+
+                                <li><i class="fa fa-calendar"></i>  {% blocktrans with sometime=blog_post.publish_date|timesince %}{{ sometime }} ago{% endblocktrans %}</li>
+
+                                {% if blog_post.allow_comments %}                                
+                                {% if settings.COMMENTS_DISQUS_SHORTNAME %}
+                                <li><i class="fa fa-comments"></i>
+                                <a href="{{ blog_post.get_absolute_url }}#disqus_thread"
+                                    data-disqus-identifier="{% disqus_id_for blog_post %}">
+                                    {% trans "Comments" %}
+                                </a></li>
+                                {% else %}
+                                <li><i class="fa fa-comments"></i>
+                                <a href="{{ blog_post.get_absolute_url }}#comments">
+                                    {% blocktrans count comments_count=blog_post.comments_count %}{{ comments_count }} comment{% plural %}{{ comments_count }} comments{% endblocktrans %}
+                                </a></li>
+                                {% endif %}
+                                {% endif %}
+
+                                {% block blog_post_list_post_links %}   
+                                    {% keywords_for blog_post as tags %}
+                                    {% if tags %}
+                                    <li>
+                                    <i class="fa fa-tags"></i>       
+                                    {% for tag in tags %}
+                                    <a href='{% url "blog_post_list_tag" tag.slug %}' class="tag">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
+                                    {% endfor %}
+                                    </li>        
+                                    {% endif %} 
+                                {% endblock %}
+                            </ul>
+
+                            <p>
+                                {{ blog_post.description_from_content|safe }}
+                                
+                            </p>
+                            <p><a class="btn-u btn-u-sm" href="{{ blog_post.get_absolute_url }}">Read More <i class="fa fa-angle-double-right margin-left-5"></i></a></p>
+                        </div>    
+
+
+
+
+                    </div>
+                    <!--End Blog Post-->
+
+                    <hr class="margin-bottom-40">
+
+                    <!--Pagination-->
+                    <div class="text-center">
+                        <ul class="pagination">                            
+                            {% pagination_for blog_posts %}
+                        </ul>
+                    </div>
+                    <!--End Pagination-->
+                </div>
+                <!-- End Left Sidebar -->
+
+
+
+{% endfor %}
+{% if settings.COMMENTS_DISQUS_SHORTNAME %}
+{% include "generic/includes/disqus_counts.html" %}
+{% endif %}
+
+{% endblock %}
+
+{% block right_panel %}
+{% include "blog/includes/filter_panel.html" %}
+{% endblock %}
+
+
+
+            </div><!--/row-->
+        </div><!--/container-->
+        <!--=== End Content Part ===-->

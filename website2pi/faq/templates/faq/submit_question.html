@@ -1,0 +1,44 @@
+{% extends "faq/base.html" %}
+
+{% block title %}{{ block.super }}<h3>Submit a Question</h3>
+							<h5><p>
+							  Use this form to submit a question (and optionally a corresponding answer)
+							  that you would like to see added to the FAQs on this site.
+							</p></h5>{% endblock %}
+
+
+{% block body %}
+<!--=== Content Part ===-->
+		<div class="container content">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<form class="reg-page" action="#" class="sky-form" method="POST">{% csrf_token %}	
+						
+							
+						<hr>
+
+						<section>	
+								 {{ form.as_section }}
+						</section>
+
+							
+						<table>
+						   	 {{ form.as_table }}
+						 </table>
+
+						
+						<div class="col-lg-6 text-right">
+								<br><button input type="submit" class="btn-u btn-u-blue">Submit</button>
+							</div>
+							
+
+						<hr>
+					</form>
+				</div>
+			</div>
+		</div><!--/container-->
+		<!--=== End Content Part ===-->
+
+{% endblock %}
+
+

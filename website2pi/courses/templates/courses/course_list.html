@@ -1,0 +1,95 @@
+{% extends 'basevid.html' %}
+
+{% block title %}Courses | {{ block.super }}{% endblock title %}
+
+
+{% block content %}
+
+
+<div class='row'>
+    <div class='col-sm-12'>
+      <div class="tag-box tag-box-v7 margin-bottom-40">
+
+          <!--=== Breadcrumbs ===-->
+          <div class="breadcrumbs">
+            <div class="container">
+              <h1 class="pull-left">Courses</h1>
+              <h4><ul class="pull-right breadcrumb">
+                  <li class="active">Courses</li>
+                  <li><a href="{% url 'categories:list' %}">Categories</a></li>
+              </ul></h4>
+            </div>
+          </div><!--/breadcrumbs-->
+          <!--=== End Breadcrumbs ===-->
+      </div>
+
+
+            <div class='row'>
+            {% for item in object_list %}
+                <div class='col-md-4 col-sm-12'>
+                     {% include 'courses/snippets/course_thumbnail_display.html' with course=item %}
+
+                </div>
+
+
+                {% if forloop.counter|divisibleby:3 %}
+                    </div><div class="row">
+                {% endif %}
+
+
+                {% empty %}
+                <p class='lead'>No item found</p>
+            {% endfor %}
+        </div>
+
+
+
+
+
+
+
+<nav aria-label="Page navigation">
+
+          <ul class="pager pager-v3 pager-md no-margin-bottom">
+            {% if page_obj.has_previous %}
+            {% if page_obj.previous_page_number > 1 %}
+               <li> <a href='{% url "courses:list" %}?page=1'><span aria-hidden="true">&laquo;</span></a></li>
+            {% endif %}
+
+            <li><a href='{% url "courses:list" %}?page={{ page_obj.previous_page_number }}'>Prev</a></li>
+
+            {% if page_obj.previous_page_number > 1 %}
+             <li><a href='{% url "courses:list" %}?page={{ page_obj.previous_page_number }}'>{{ page_obj.previous_page_number }}</a></li>
+             {% endif %}
+
+
+        {% endif %}
+
+         <li class='active'><a href='#'>{{ page_obj.number }}</a></li>
+        {% if page_obj.has_next %}
+                {% if page_obj.paginator.num_pages > page_obj.next_page_number %}
+                <li><a href='{% url "courses:list" %}?page={{ page_obj.next_page_number }}'>{{ page_obj.next_page_number }}</a></li>
+                {% endif %}
+               <li><a href='{% url "courses:list" %}?page={{ page_obj.next_page_number }}'>Next</a></li>
+
+               {% if page_obj.paginator.num_pages > page_obj.next_page_number %}
+                <li> <a href='{% url "courses:list" %}?page={{ page_obj.paginator.num_pages }}'><span aria-hidden="true">&raquo;</span></a></li>
+                {% endif %}
+        {% endif %}
+          </ul>
+</nav>
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+    </div>
+</div>
+{% endblock content %}
